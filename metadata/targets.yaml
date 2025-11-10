@@ -1,0 +1,21 @@
+sites:
+  - code: DSS
+    name: Donostia–San Sebastián
+    country: ES
+    hazards: [coastal_pluvial, wind]
+    crs: EPSG:25830
+    bbox: [-2.07, 43.28, -1.94, 43.35]
+
+  - code: SFO
+    name: San Francisco
+    country: US
+    hazards: [earthquake, coastal_surge, wildfire]
+    crs: EPSG:4326
+    bbox: [-123.17, 37.6, -122.25, 37.9]
+
+  - code: SYN
+    name: Lunar Analog (Synthetic)
+    country: N/A
+    hazards: [dust_storm, radiation, thermal]
+    crs: CUSTOM
+    bbox: [0, 0, 1, 1]

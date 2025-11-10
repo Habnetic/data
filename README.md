@@ -13,10 +13,47 @@ It includes both raw external sources (NASA, ESA, UN-Habitat, OSM) and processed
 ## 🗂 Repository Structure
 ```
 data/
-├── raw/ → Unmodified open datasets from external portals
-├── processed/ → Cleaned and harmonized versions for analysis
-├── metadata/ → Documentation, licenses, and provenance files
-└── data_catalog.md → Overview of sources and access details
+│   data_catalog.md
+│   LICENSE
+│   README.md
+│
+├───metadata/
+│   │   targets.yaml
+│   │
+│   └───sources/
+│           DSS_sources.md
+│           SFO_sources.md
+│           SYN_sources.md
+│
+├───processed/
+│   ├───DSS/
+│   │   ├───merged
+│   │   ├───normalized
+│   │   └───priors
+│   ├───SFO/
+│   │   ├───merged
+│   │   ├───normalized
+│   │   └───priors
+│   └───SYN/
+│       ├───merged
+│       ├───normalized
+│       └───priors
+└───raw/
+    ├───DSS/
+    │   ├───buildings
+    │   ├───climate
+    │   ├───hazards
+    │   └───socio
+    ├───SFO/
+    │   ├───buildings
+    │   ├───climate
+    │   ├───hazards
+    │   └───socio
+    └───SYN/
+        ├───buildings
+        ├───climate
+        ├───hazards
+        └───socio
 ```
 
 ---
