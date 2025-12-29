@@ -19,3 +19,12 @@ sites:
     hazards: [dust_storm, radiation, thermal]
     crs: CUSTOM
     bbox: [0, 0, 1, 1]
+
+  - code: CON
+    name: Concordia Station (Antarctica)
+    country: AQ
+    hazards: [thermal_extreme, isolation, power_failure]
+    crs: TBD
+    bbox: TBD
+    status: future
+    notes: Extreme Earth analog. Phase 3 only.

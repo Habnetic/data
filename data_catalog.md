@@ -9,3 +9,4 @@ Central index of available datasets across benchmark sites.
 | SFO | Hazards | USGS ShakeMap 2019 | ☐ | raw/SFO/hazards/ | |
 | SFO | Buildings | SF Building footprints | ☐ | raw/SFO/buildings/ | |
 | SYN | Terrain | Lunar DEM (synthetic) | ☐ | raw/SYN/hazards/ | Procedural |
+| CON | Extreme | Concordia Station (analog) | ☐ | raw/CON/ | Phase 3 only |
