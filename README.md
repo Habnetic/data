@@ -21,12 +21,12 @@ data/
 │   │   targets.yaml
 │   │
 │   └───sources/
-│           DSS_sources.md
+│           RTM_sources.md
 │           SFO_sources.md
 │           SYN_sources.md
 │
 ├───processed/
-│   ├───DSS/
+│   ├───RTM/
 │   │   ├───merged
 │   │   ├───normalized
 │   │   └───priors
@@ -39,7 +39,7 @@ data/
 │       ├───normalized
 │       └───priors
 └───raw/
-    ├───DSS/
+    ├───RTM/
     │   ├───buildings
     │   ├───climate
     │   ├───hazards
