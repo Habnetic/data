@@ -82,4 +82,12 @@ data/
 
 ---
 
+## License
+
+Unless otherwise stated, the contents of this repository are licensed under the MIT License.
+
+The Habnetic name and logo are not licensed for reuse or endorsement.
+
+---
+
 © 2026 Habnetic — Open Research for Resilient Futures
