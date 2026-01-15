@@ -1,0 +1,28 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+.vscode/
+__pycache__/
+*.pyc
+
+# Keep big raw downloads out of Git
+raw/**/downloads/
+raw/**/*.zip
+raw/**/*.7z
+raw/**/*.gpkg
+raw/**/*.geojson
+raw/**/*.shp
+raw/**/*.shx
+raw/**/*.dbf
+raw/**/*.prj
+raw/**/*.tif
+raw/**/*.tiff
+raw/**/*.nc
+raw/**/*.csv
+
+# Optional: keep processed exports in Git *only if small*
+# If you expect large processed outputs, ignore them too:
+# processed/**/*.gpkg
+# processed/**/*.parquet
