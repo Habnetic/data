@@ -39,7 +39,8 @@ def normalize_hydrography(paths: Paths) -> gpd.GeoDataFrame:
     if not paths.raw_gpkg.exists():
         raise FileNotFoundError(f"Raw hydrography file not found: {paths.raw_gpkg}")
 
-    gdf = gpd.read_file(paths.raw_gpkg, layer=paths.raw_layer)
+    gdf = gpd.read_file(paths.raw_gpkg, layer=paths.raw_layer, engine="pyogrio")
+
     if gdf.crs is None:
         raise ValueError("Raw hydrography CRS missing. Fix before proceeding.")
 
@@ -89,7 +90,7 @@ def main() -> int:
         out_gpkg=out_gpkg,
         boundary_gpkg=None,         # set later, e.g. Path("raw/RTM/boundaries/rotterdam.gpkg")
         boundary_layer=None,
-        raw_layer=None,             # if needed, set to a layer name
+        raw_layer="top50nl_waterdeel_lijn",             # if needed, set to a layer name
     )
 
     if not raw_gpkg.exists():

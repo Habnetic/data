@@ -1,13 +1,32 @@
-# OS/editor noise
+# =========================
+# OS / editor noise
+# =========================
 .DS_Store
 Thumbs.db
+.vscode/
 *.swp
 *.tmp
-.vscode/
+*.log
+
+# =========================
+# Python
+# =========================
+.venv/
+venv/
+env/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Keep big raw downloads out of Git
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Raw data downloads (never versioned)
+# =========================
 raw/**/downloads/
 raw/**/*.zip
 raw/**/*.7z
@@ -22,7 +41,7 @@ raw/**/*.tiff
 raw/**/*.nc
 raw/**/*.csv
 
-# Optional: keep processed exports in Git *only if small*
-# If you expect large processed outputs, ignore them too:
-# processed/**/*.gpkg
-# processed/**/*.parquet
+# =========================
+# Processed data (generated artifacts)
+# =========================
+processed/**
