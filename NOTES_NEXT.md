@@ -8,8 +8,8 @@ Current state (2026-01-15)
 - QGIS checks passed (alignment + clipping)
 
 Resume plan
-1) Add RTM buildings (OSM)
-   - download → raw/RTM/buildings/osm/
+1) Extract and normalize RTM buildings (OSM)
+   - extract building polygons from OSM PBF
    - normalize CRS to EPSG:28992 → processed/RTM/normalized/buildings.gpkg
    - clip to boundary → processed/RTM/derived/buildings_rtm.gpkg
 
