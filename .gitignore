@@ -30,6 +30,7 @@ __pycache__/
 raw/**/downloads/
 raw/**/*.zip
 raw/**/*.7z
+raw/**/*.osm.pbf
 raw/**/*.gpkg
 raw/**/*.geojson
 raw/**/*.shp
