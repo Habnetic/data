@@ -1,0 +1,51 @@
+# CRS registry for Habnetic study areas
+# One study area → one projected CRS
+
+rotterdam:
+  body: Earth
+  crs:
+    authority: EPSG
+    code: 28992
+    name: "Amersfoort / RD New"
+    units: meters
+    rationale: "Dutch national projected CRS; compatible with CBS, PDOK, Kadaster"
+  status: locked
+
+san_francisco:
+  body: Earth
+  crs:
+    authority: EPSG
+    code: 32610
+    name: "UTM Zone 10N"
+    units: meters
+    rationale: "City-scale exposure modeling with metric distances"
+  status: proposed
+
+concordia_station:
+  body: Earth
+  region: Antarctica
+  crs:
+    authority: EPSG
+    code: 3031
+    name: "Antarctic Polar Stereographic"
+    units: meters
+    rationale: "Standard polar projection for glaciology and climate science"
+  status: proposed
+
+shackleton_crater:
+  body: Moon
+  crs:
+    authority: IAU
+    projection: polar_stereographic
+    units: meters
+    rationale: "Lunar south pole base and terrain modeling"
+  status: conceptual
+
+mars_reference:
+  body: Mars
+  crs:
+    authority: IAU
+    projection: equirectangular
+    units: meters
+    rationale: "Global-to-regional martian habitat modeling"
+  status: conceptual
