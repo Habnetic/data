@@ -43,6 +43,15 @@ raw/**/*.nc
 raw/**/*.csv
 
 # =========================
-# Processed data (generated artifacts)
+# Processed data (default: ignore)
 # =========================
 processed/**
+
+# --- Allow RTM priors ONLY ---
+!processed/RTM/
+!processed/RTM/priors/
+!processed/RTM/priors/*.parquet
+
+# --- Allow README / metadata files ---
+!processed/**/README.md
+!processed/**/metadata.*
