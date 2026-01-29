@@ -27,8 +27,7 @@ For each building *i*:
 **Name**: `d_water_i`
 
 **Definition**:  
-Minimum Euclidean distance (in meters) from the building centroid
-to the nearest hydrography feature (line geometry).
+Minimum Euclidean distance (in meters) from a representative point of the building footprint to the nearest hydrography centerline (TOP50NL waterdeel_lijn).
 
 **Source datasets**:
 - Buildings: `processed/RTM/derived/buildings_rtm.gpkg`
@@ -84,3 +83,4 @@ These metrics serve as **exposure proxies** only.
 - Derived from: TOP50NL hydrography (waterdeel_lijn)
 - Validated spatially in QGIS
 - Ready for use in exploratory analysis and Bayesian modeling
+- v0 water exposure features represent proximity and density relative to the permanent linear water network (rivers, canals, waterways), not inundation or flood hazard.

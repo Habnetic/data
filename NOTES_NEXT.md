@@ -33,7 +33,7 @@
 - Compute distance to nearest water for each building  
   (source: `processed/RTM/derived/buildings_rtm.gpkg`  
   and `processed/RTM/derived/hydrography_rtm.gpkg`)
-- Compute water length density within buffers (250 m / 500 m)
+- Compute water length density within buffers (250 m / 500 m / 1000 m)
 - Output table:  
   `processed/RTM/priors/building_water_proximity.parquet`
 
