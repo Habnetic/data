@@ -51,6 +51,9 @@ processed/**
 !processed/RTM/
 !processed/RTM/priors/
 !processed/RTM/priors/*.parquet
+processed/RTM/priors/*_sample.parquet
+
+
 
 # --- Allow README / metadata files ---
 !processed/**/README.md
