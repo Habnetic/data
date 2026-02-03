@@ -19,7 +19,6 @@ class Paths:
 
 
 def _read_any_layer(path: Path) -> gpd.GeoDataFrame:
-    # boundary_rtm.gpkg likely has a single layer; read_file without layer is fine
     return gpd.read_file(path, engine="pyogrio")
 
 
@@ -35,11 +34,17 @@ def main() -> int:
     buildings = gpd.read_file(p.buildings_norm, layer=p.buildings_layer, engine="pyogrio")
     buildings = buildings[~buildings.geometry.isna()].copy()
 
+    # Require stable join key from normalization step
+    if "bldg_id" not in buildings.columns:
+        raise ValueError(
+            "Missing 'bldg_id' in normalized buildings. "
+            "Re-run scripts/rtm/normalize_buildings.py (it must write bldg_id)."
+        )
+
     print("Reading RTM boundary (normalized)...")
     boundary = _read_any_layer(p.boundary_norm)
     boundary = boundary[~boundary.geometry.isna()].copy()
 
-    # Ensure single geometry (dissolve) and matching CRS
     boundary = boundary.dissolve()  # one row
     if buildings.crs != boundary.crs:
         boundary = boundary.to_crs(buildings.crs)
@@ -47,7 +52,6 @@ def main() -> int:
     print("Clipping buildings to RTM boundary...")
     clipped = gpd.clip(buildings, boundary)
 
-    # Clean up: reset index and ensure valid-ish geometries
     clipped = clipped.reset_index(drop=True)
     clipped = clipped[~clipped.geometry.is_empty]
     clipped = clipped.set_geometry("geometry")
@@ -55,7 +59,7 @@ def main() -> int:
     p.out_gpkg.parent.mkdir(parents=True, exist_ok=True)
 
     print(f"Writing: {p.out_gpkg} (layer={p.out_layer}) ...")
-    clipped.to_file(p.out_gpkg, driver="GPKG", layer=p.out_layer, engine="pyogrio")
+    clipped.to_file(p.out_gpkg, driver="GPKG", layer=p.out_layer, engine="pyogrio", mode="w")
 
     print(f"Wrote {len(clipped)} buildings → {p.out_gpkg}")
     return 0
