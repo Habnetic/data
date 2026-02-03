@@ -1,6 +1,6 @@
 # Next steps — RTM pipeline
 
-## Current state (2026-01-31)
+## Current state (2026-02-02)
 
 ### Spatial backbone (complete)
 
@@ -51,16 +51,44 @@
 - **Output table (canonical)**  
   `processed/RTM/priors/building_water_proximity.parquet`
 
-- **Schema guarantees**:
+- **Schema guarantees**
   - One row per building
   - Stable join key: `bldg_id`
-  - No geometry (attribute table only)
-  - Units: meters (distance), 1/m (density)
+  - Attribute-only table (no geometry)
+  - Units:
+    - meters for distance
+    - 1/m for density
 
-- **Sanity checks**:
+- **Sanity checks**
   - Row count: 221,324
-  - No missing `bldg_id`
+  - No missing or duplicated `bldg_id`
   - Distance and density distributions validated
+  - Correlations inspected (expected sign + magnitude)
+
+---
+
+### Deterministic latent exposure (v0 complete)
+
+- **Notebook**
+  - `resilient-housing-bayes/notebooks/03_model_definition.ipynb`
+
+- **Definition**
+  - Log-transform exposure variables
+  - Z-score standardization
+  - Deterministic aggregation:
+    ```
+    E_hat = mean(z_d, z_250, z_500, z_1000)
+    ```
+
+- **Exports**
+  - `resilient-housing-bayes/outputs/rtm/water_exposure_Ehat_v0.parquet`
+  - `resilient-housing-bayes/outputs/rtm/water_exposure_Ehat_v0_stats.json`
+
+- **Properties**
+  - One row per building
+  - Keyed by `bldg_id`
+  - No probabilistic interpretation
+  - Suitable for ranking, clustering, and visualization only
 
 ---
 
@@ -82,54 +110,62 @@ All transformations are scripted and reproducible end-to-end.
 
 ## Next steps (actual, not aspirational)
 
-### 1) Deterministic latent exposure index (Ê) — **now**
+### 1) QGIS verification (short, manual)
 
-Location:  
-`resilient-housing-bayes/notebooks/03_model_definition.ipynb`
+- Join `water_exposure_Ehat_v0.parquet` to:
+  - `processed/RTM/derived/buildings_rtm.gpkg`
+- Join key: `bldg_id`
+- Style by graduated color on `E_hat`
 
-- Consume `building_water_proximity.parquet`
-- Transform exposure variables (log + standardization)
-- Define **deterministic latent exposure index**:
-  - `E_hat = mean(z_d, z_250, z_500, z_1000)`
-- Export:
-  - `bldg_id`
-  - `E_hat`
-  - standardized components
+Expectation:
+- High `E_hat` near canals, rivers, harbor network
+- Smooth spatial gradients, no checkerboarding
 
-This produces the **v0 exposure surface** used everywhere else.
+If this fails, fix **inputs or transforms**, not downstream models.
 
 ---
 
-### 2) Optional Bayesian wrapper (exploratory)
+### 2) Documentation lock-in
 
-- Treat `E_hat` as:
-  - latent mean, or
-  - prior center
-- Bayesian inference is **exploratory only**
-- No claims, no calibration, no policy interpretation
+- Update canonical definition:
+  - `Habnetic/docs/references/exposure/rtm_water_exposure_v0.md`
+- Must include:
+  - input features
+  - transforms
+  - `E_hat` formula
+  - interpretation constraints
+  - exact export paths
+
+This freezes RTM exposure v0.
 
 ---
 
-### 3) Visualization & communication
+### 3) Exposure observatory (v0)
 
-- QGIS join on `bldg_id`
-- Produce:
-  - exposure gradient map
-  - histogram of `E_hat`
-- One reproducible figure or table
+- Artifact-driven, read-only
+- Inputs:
+  - `water_exposure_Ehat_v0.parquet`
+  - stats JSON
+  - one or two static figures
+- Output:
+  - static HTML report per run
+  - stored under `runs/<run_id>/`
+
+No interactivity. No inference. No sliders. No promises.
 
 ---
 
 ## Notes / constraints
 
 - Exposure ≠ hazard
-- No flood probability, depth, or damage modeled yet
-- All assumptions documented upstream in `Habnetic/docs`
-- RTM pipeline is **Phase 0 baseline**
+- No flood probability, depth, or damage modeled
+- No Bayesian inference without an outcome
+- RTM is **Phase 0 baseline**, not a result
 
-The system is now ready to:
-- scale to other cities
-- accept additional exposure dimensions
-- serve as input to hazard–impact models
+The RTM pipeline is now:
+- spatially complete
+- numerically stable
+- reproducible
+- ready to accept hazards or scale to other cities
 
-No further spatial preprocessing is required for RTM.
+No further spatial preprocessing is required for Rotterdam.
