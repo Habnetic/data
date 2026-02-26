@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import os
 import zipfile
+import argparse
 
 import cdsapi
 
@@ -15,16 +16,24 @@ def find_repo_root(start: Path) -> Path:
     for p in [start, *start.parents]:
         if (p / ".git").exists() or (p / "pyproject.toml").exists() or (p / "README.md").exists():
             return p
-    # Fallback: 5 levels up from this file (matches data/scripts/... layout)
     return start.parents[5]
 
 
-def is_zip_file(path: Path) -> bool:
+def magic4(path: Path) -> bytes:
     try:
         with path.open("rb") as f:
-            return f.read(4) == b"PK\x03\x04"
+            return f.read(4)
     except FileNotFoundError:
-        return False
+        return b""
+
+
+def is_zip_file(path: Path) -> bool:
+    return magic4(path) == b"PK\x03\x04"
+
+
+def is_hdf5_file(path: Path) -> bool:
+    # NetCDF4 files are HDF5 containers; HDF5 magic is b"\x89HDF"
+    return magic4(path) == b"\x89HDF"
 
 
 def extract_zip(zip_path: Path, out_dir: Path) -> list[Path]:
@@ -36,17 +45,36 @@ def extract_zip(zip_path: Path, out_dir: Path) -> list[Path]:
     return extracted
 
 
-# --- Resolve "repo root" robustly (works no matter where you run from) ---
+def looks_like_valid_era5_nc(path: Path) -> bool:
+    """
+    Cheap structural check:
+    - must be HDF5 (NetCDF4)
+    - and should contain 'tp' variable when opened
+    """
+    if not path.exists():
+        return False
+    if not is_hdf5_file(path):
+        return False
+
+    # Lazy import to avoid forcing xarray dependency on download-only use
+    try:
+        import xarray as xr
+        ds = xr.open_dataset(path, engine="h5netcdf")
+        ok = ("tp" in ds.data_vars) and (len(ds.dims) >= 2)
+        ds.close()
+        return bool(ok)
+    except Exception:
+        return False
+
+
+# --- Resolve "repo root" robustly ---
 SCRIPT_PATH = Path(__file__).resolve()
 DEFAULT_ROOT = find_repo_root(SCRIPT_PATH)
 REPO_ROOT = Path(os.environ.get("HABNETIC_ROOT", DEFAULT_ROOT)).resolve()
 
-# In your structure, REPO_ROOT already is .../Habnetic/data
-# So raw data lives at: <REPO_ROOT>/raw/...
 OUT = REPO_ROOT / "raw" / "RTM" / "hazards" / "pluvial" / "ERA5_Land"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# --- Request parameters ---
 years = range(1991, 2021)
 months = [f"{m:02d}" for m in range(1, 13)]
 days = [f"{d:02d}" for d in range(1, 32)]
@@ -57,29 +85,35 @@ area = [52.05, 4.00, 51.85, 4.65]
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true", help="Redownload even if file looks valid.")
+    args = parser.parse_args()
+
     print(f"Repo root: {REPO_ROOT}")
     print(f"Writing raw ERA5-Land files to: {OUT}")
+    print(f"Force redownload: {args.force}")
 
     c = cdsapi.Client()
 
     for y in years:
         for m in months:
-            # We WANT a .nc, but CDS may still return a zip.
-            # We'll save to .nc and detect/unzip if needed.
             target = OUT / f"era5_land_tp_hourly_{y}-{m}_RTM.nc"
 
-            # Skip if we already have a sensible .nc (or extracted .nc)
-            if target.exists() and target.stat().st_size > 1_000_000 and not is_zip_file(target):
-                print(f"Skip (exists): {target.name}")
+            if not args.force and looks_like_valid_era5_nc(target):
+                print(f"Skip (valid): {target.name}")
                 continue
 
-            # If previous run left a tiny/partial file OR a zip disguised as .nc, remove it and re-download
+            # Clean up known-bad states before (re)downloading
             if target.exists():
-                if target.stat().st_size <= 1_000_000:
-                    print(f"Remove partial/tiny: {target.name} ({target.stat().st_size} bytes)")
-                    target.unlink()
-                elif is_zip_file(target):
+                if is_zip_file(target):
                     print(f"Remove zipped payload: {target.name}")
+                    target.unlink()
+                elif not is_hdf5_file(target):
+                    print(f"Remove non-HDF5 file: {target.name}")
+                    target.unlink()
+                else:
+                    # HDF5 but failed the structural check (can't open / missing tp)
+                    print(f"Remove unreadable/invalid HDF5: {target.name}")
                     target.unlink()
 
             print(f"Requesting {y}-{m} -> {target.name}")
@@ -89,17 +123,16 @@ def main() -> None:
                     "variable": "total_precipitation",
                     "year": str(y),
                     "month": m,
-                    "day": days,  # CDS ignores invalid days (e.g., 31 in Feb)
+                    "day": days,
                     "time": times,
                     "area": area,
-                    # Match the CDS UI concepts:
                     "data_format": "netcdf",
                     "download_format": "unarchived",
                 },
                 str(target),
             )
 
-            # CDS sometimes still returns a ZIP even if you ask for unarchived.
+            # CDS may still return ZIP even if you ask for unarchived
             if is_zip_file(target):
                 zip_path = target.with_suffix(".zip")
                 target.rename(zip_path)
@@ -107,14 +140,10 @@ def main() -> None:
 
                 extracted = extract_zip(zip_path, OUT)
                 print(f"Extracted {len(extracted)} file(s) from {zip_path.name}")
-
-                # Remove the zip after extraction
                 zip_path.unlink()
 
-                # If the zip contained a .nc, rename it to our canonical target name
                 nc_candidates = [p for p in extracted if p.suffix.lower() == ".nc"]
                 if nc_candidates:
-                    # Take the first .nc file and rename to canonical name
                     extracted_nc = nc_candidates[0]
                     if extracted_nc.name != target.name:
                         if target.exists():
@@ -123,6 +152,12 @@ def main() -> None:
                         print(f"Canonicalized extracted NC to: {target.name}")
                 else:
                     print("WARNING: ZIP did not contain a .nc file. Inspect extracted contents.")
+
+            # Final sanity: confirm we got something valid
+            if looks_like_valid_era5_nc(target):
+                print(f"OK: {target.name}")
+            else:
+                print(f"WARNING: downloaded file does not look valid: {target.name}")
 
     print("Done.")
 

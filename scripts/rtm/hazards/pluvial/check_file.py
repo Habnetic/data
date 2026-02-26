@@ -1,7 +1,7 @@
 import numpy as np
 import xarray as xr
 
-path = r"raw/RTM/hazards/pluvial/ERA5_Land/era5_land_tp_hourly_1991-01_RTM.nc"
+path = r"raw/RTM/hazards/pluvial/ERA5_Land/era5_land_tp_hourly_1992-06_RTM.nc"
 
 ds = xr.open_dataset(path)  # or engine="cfgrib" / "h5netcdf" if needed
 tp = ds["tp"].values

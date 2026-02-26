@@ -1,0 +1,15 @@
+RTM Phase 1 — Pluvial Hazard v1
+Date: 2026-02-26
+
+File: H_pluvial_v1_buildings.parquet
+Rows: 221324
+
+H_pluvial_v1_mm:
+min  = 25.408
+p50  = 25.644
+p95  = 26.014
+max  = 26.505
+
+Notes:
+- 3 grid NaNs filled via nearest-neighbor (KDTree)
+- centroid lon/lat clamped to grid bounds
