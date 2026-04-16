@@ -23,3 +23,9 @@ Notes:
 - Used as hydrography input for Hamburg Phase 3 water proximity metrics.
 
 Extreme dist_to_water_m values likely reflect peripheral Hamburg territory and the fact that the hydrography source is inland-network focused, not full coastal/sea-water representation.
+
+Note:
+After clipping hydrography to the Donostia boundary, non-line clip artifacts
+(Point, MultiPoint, GeometryCollection) were observed. These are filtered out
+before computing building water proximity metrics so that only line geometries
+contribute to distance and buffer-length calculations.
