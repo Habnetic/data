@@ -1,0 +1,29 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>HmbTG_Basis_Gewaessernetz_FHH</Name>
+    <ElementPath>HmbTG_Basis_Gewaessernetz_FHH</ElementPath>
+    <GeometryName>the_geom</GeometryName>
+    <GeometryElementPath>the_geom</GeometryElementPath>
+    <!--MULTILINESTRINGZ-->
+    <GeometryType>-2147483643</GeometryType>
+    <SRSName>urn:ogc:def:crs:EPSG::3044</SRSName>
+    <DatasetSpecificInfo>
+      <FeatureCount>539</FeatureCount>
+      <ExtentXMin>548323.50650</ExtentXMin>
+      <ExtentXMax>588759.68671</ExtentXMax>
+      <ExtentYMin>5916910.32610</ExtentYMin>
+      <ExtentYMax>5954017.92390</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>name</Name>
+      <ElementPath>name</ElementPath>
+      <Type>String</Type>
+      <Width>37</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>gid</Name>
+      <ElementPath>gid</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>
