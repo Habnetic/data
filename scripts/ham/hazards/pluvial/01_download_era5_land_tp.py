@@ -74,9 +74,10 @@ REPO_ROOT = Path(os.environ.get("HABNETIC_ROOT", DEFAULT_ROOT)).resolve()
 OUT = REPO_ROOT / "raw" / "HAM" / "hazards" / "pluvial" / "ERA5_Land"
 OUT.mkdir(parents=True, exist_ok=True)
 
-#YEARS = range(1991, 2021)
-MONTHS = [f"{m:02d}" for m in range(1, 13)]
-YEARS = range(2020, 2021)
+YEARS = [2002]
+MONTHS = ["10"]
+#MONTHS = [f"{m:02d}" for m in range(1, 13)]
+#YEARS = range(2020, 2021)
 #MONTHS = ["01"]
 DAYS = [f"{d:02d}" for d in range(1, 32)]
 TIMES = [f"{h:02d}:00" for h in range(0, 24)]
