@@ -21,7 +21,6 @@ print(df_exp.columns.tolist())
 print("Hazard columns:")
 print(df_haz.columns.tolist())
 
-# Required exposure columns
 exposure_cols = [
     "bldg_id",
     "dist_to_water_m",
@@ -34,7 +33,6 @@ missing_exp = [c for c in exposure_cols if c not in df_exp.columns]
 if missing_exp:
     raise KeyError(f"Missing required exposure columns: {missing_exp}")
 
-# Identify hazard column
 hazard_candidates = [
     "H_pluvial_v1_mm",
     "H_pluvial_v1",
@@ -60,13 +58,19 @@ if "bldg_id" not in df_haz.columns:
 df_exp_small = df_exp[exposure_cols].copy()
 df_haz_small = df_haz[["bldg_id", hazard_col]].copy()
 
-df = df_exp_small.merge(df_haz_small, on="bldg_id", how="inner", validate="one_to_one")
+df = df_exp_small.merge(
+    df_haz_small,
+    on="bldg_id",
+    how="inner",
+    validate="one_to_one",
+)
 
-# Standardize hazard column name
+# Sanity cap for extreme distance-to-water artifacts
+df["dist_to_water_m"] = df["dist_to_water_m"].clip(upper=5000)
+
 if hazard_col != "H_pluvial_v1_mm":
     df = df.rename(columns={hazard_col: "H_pluvial_v1_mm"})
 
-# Validation
 if df["bldg_id"].duplicated().any():
     raise ValueError("Duplicate bldg_id values found after merge")
 
@@ -90,6 +94,7 @@ for c in required_final[1:]:
 
 print(f"Final row count: {len(df):,}")
 print(df[required_final].head())
+print(df[["dist_to_water_m"]].describe())
 
 output_path.parent.mkdir(parents=True, exist_ok=True)
 df.to_parquet(output_path, index=False)
