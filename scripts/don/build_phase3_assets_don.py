@@ -5,14 +5,48 @@ DATA_ROOT = Path.cwd()  # run from data repo root
 
 don_root = DATA_ROOT / "processed" / "DON"
 
-priors_path = don_root / "priors" / "building_water_proximity.parquet"
+priors_base_path = don_root / "priors" / "building_water_proximity.parquet"
+priors_distance_path = don_root / "priors" / "building_water_proximity_v2_coast.parquet"
 hazard_path = don_root / "hazards" / "pluvial" / "H_pluvial_v1_buildings.parquet"
 output_path = don_root / "phase3_assets.parquet"
 
-print(f"Loading priors from: {priors_path}")
+print(f"Loading base priors from: {priors_base_path}")
+print(f"Loading v3 distance priors from: {priors_distance_path}")
 print(f"Loading hazard from: {hazard_path}")
 
-df_exp = pd.read_parquet(priors_path)
+df_base = pd.read_parquet(priors_base_path)
+df_v3 = pd.read_parquet(priors_distance_path)
+df_haz = pd.read_parquet(hazard_path)
+
+density_cols = [
+    "bldg_id",
+    "water_len_density_250m",
+    "water_len_density_500m",
+    "water_len_density_1000m",
+]
+
+distance_cols = [
+    "bldg_id",
+    "dist_to_water_m",
+]
+
+missing_base = [c for c in density_cols if c not in df_base.columns]
+missing_v3 = [c for c in distance_cols if c not in df_v3.columns]
+
+if missing_base:
+    raise KeyError(f"Missing density columns in base priors: {missing_base}")
+if missing_v3:
+    raise KeyError(f"Missing distance columns in v3 priors: {missing_v3}")
+
+df_exp = df_base[density_cols].merge(
+    df_v3[distance_cols],
+    on="bldg_id",
+    how="inner",
+    validate="one_to_one",
+)
+
+print("Exposure columns:")
+print(df_exp.columns.tolist())
 df_haz = pd.read_parquet(hazard_path)
 
 print("Exposure columns:")

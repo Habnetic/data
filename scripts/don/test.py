@@ -1,9 +1,16 @@
 import pandas as pd
 
-df = pd.read_parquet("processed/DON/hazards/pluvial/H_pluvial_v1_buildings.parquet")
+df = pd.read_parquet("processed/DON/priors/building_water_proximity_v3.parquet")
 
-print(df.shape)
-print(df.columns.tolist())
-print(df["H_pluvial_v1_mm"].describe(percentiles=[0.1, 0.5, 0.9, 0.99]))
-print("duplicate bldg_id:", df["bldg_id"].duplicated().sum())
-print("NaNs:", df["H_pluvial_v1_mm"].isna().sum())
+print(df[[
+    "dist_to_hydrography_m",
+    "dist_to_coast_m",
+    "dist_to_water_m"
+]].head(20))
+
+print("\nEquality checks:")
+print("water == coast:",
+      (df["dist_to_water_m"] == df["dist_to_coast_m"]).mean())
+
+print("water == hydro:",
+      (df["dist_to_water_m"] == df["dist_to_hydrography_m"]).mean())
