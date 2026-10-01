@@ -1,130 +1,143 @@
 # 🌐 Habnetic Data
 
-Open datasets and metadata supporting research within the **Habnetic** ecosystem.
+Open datasets and processed spatial data supporting the **Habnetic** open research project.
 
 ---
 
-## 🧭 Purpose
-This repository curates public and derived datasets for studying **housing resilience**, **urban adaptation**, and **probabilistic design**.
+# Purpose
 
-It contains:
-- raw external datasets (e.g. OSM, CBS, PDOK, NASA, ESA)
-- normalized and derived spatial layers
-- metadata required to ensure **reproducibility and numerical correctness**
+This repository contains the datasets used throughout the Habnetic research ecosystem.
 
-All modeling logic, theory, and interpretation live outside this repository.
+It manages raw data, processed spatial layers, derived variables, and reproducible data products required by the Bayesian modelling framework.
+
+The repository intentionally contains **data rather than modelling logic**. Statistical inference, conceptual definitions, and visualisation are maintained in the companion Habnetic repositories.
 
 ---
 
-## 🗂 Repository Structure
+# Repository responsibilities
 
-```
+This repository provides:
+
+* raw open datasets
+* processed spatial datasets
+* derived exposure variables
+* reproducible intermediate products
+* metadata describing provenance and processing
+
+Responsibilities across the Habnetic ecosystem are intentionally separated:
+
+* **Habnetic/data** → datasets and derived spatial products
+* **Habnetic/docs** → concepts, terminology, methodology
+* **resilient-housing-bayes** → Bayesian inference and statistical models
+* **habnetic.github.io** → public communication
+
+---
+
+# Current research data
+
+The current research focuses on urban flood prioritisation.
+
+Study areas currently include:
+
+* Rotterdam
+* Hamburg
+* Donostia-San Sebastián
+
+The repository contains datasets supporting exposure modelling, hazard proxies, and posterior decision stability experiments.
+
+---
+
+# Repository structure
+
+```text
 data/
-│ data_catalog.md
-│ LICENSE
-│ README.md
 │
-├── metadata/
-│ │ targets.yaml
-│ │ crs_registry.yaml
-│ │
-│ └── sources/
-│ RTM_sources.md
-│ SFO_sources.md
-│ SYN_sources.md
-│
+├── raw/
 ├── processed/
-│ ├── RTM/
-│ │ ├── normalized/
-│ │ │ hydrography.gpkg
-│ │ │ boundary_rtm.gpkg
-│ │ │ buildings.gpkg
-│ │ ├── derived/
-│ │ │ hydrography_rtm.gpkg
-│ │ │ buildings_rtm.gpkg
-│ │ └── priors/
-│ │ (generated exposure priors)
-│ ├── SFO/
-│ │ ├── normalized/
-│ │ ├── derived/
-│ │ └── priors/
-│ └── SYN/
-│ ├── normalized/
-│ ├── derived/
-│ └── priors/
-│
-└── raw/
-├── RTM/
-│ ├── buildings/
-│ │ └── osm/
-│ │ └── SOURCE.md
-│ ├── climate/
-│ ├── hazards/
-│ ├── socio/
-│ └── boundaries/
-│ └── rotterdam_municipality/
-│ └── SOURCE.md
-├── SFO/
-│ ├── buildings/
-│ ├── climate/
-│ ├── hazards/
-│ └── socio/
-└── SYN/
-├── buildings/
-├── climate/
-├── hazards/
-└── socio/
+├── metadata/
+├── exports/
+└── README.md
 ```
 
+Typical contents include:
+
+* OpenStreetMap extracts
+* administrative boundaries
+* hydrography
+* building footprints
+* processed GeoPackages
+* derived exposure priors
+* metadata
+* processing logs
 
 ---
 
-## 🧠 Spatial reference (CRS)
+# Data principles
 
-All spatial datasets in this repository follow a **one-CRS-per-study-area** rule.
+The repository follows several principles:
 
-- CRS choices are recorded in  
-  `metadata/crs_registry.yaml`
-- The rationale and rules are documented in  
-  **Habnetic Docs → Reference → CRS Policy**
-
-👉 See: https://github.com/Habnetic/docs
-
-No spatial analysis should be performed unless datasets are normalized to the declared CRS for their study area.
+* reproducible processing
+* explicit provenance
+* open-source datasets where possible
+* version-controlled derived products
+* consistent coordinate reference systems
+* transparent processing pipelines
 
 ---
 
-## ⚙️ Data ethics & licensing
-- All data is open-access or redistributed under compatible public licenses.
-- Attribution and license details are maintained in `metadata/sources/`.
-- Derived datasets inherit the most restrictive upstream license where applicable.
-- No personal data is intentionally stored in this repository.
+# Spatial reference systems
+
+Each study area uses a single canonical coordinate reference system.
+
+CRS definitions and processing conventions are maintained in the Habnetic documentation repository.
+
+No spatial analysis should be performed outside the declared CRS for each study area.
 
 ---
 
-## 📊 Data domains (non-exhaustive)
+# Stewardship
 
-| Domain | Examples | Sources |
-|------|---------|--------|
-| **Buildings** | footprints, height proxies, typologies | OpenStreetMap, national cadastres |
-| **Hazards** | flood proximity, seismic context, heat | PDOK, FEMA, Copernicus |
-| **Climate** | temperature, precipitation, sea level | NOAA, CMIP, WorldClim |
-| **Socioeconomic** | costs, exposure, displacement | World Bank, OECD |
+This repository was founded and is currently stewarded by **Mikel Martínez Mugica**.
 
----
+Development is conducted openly under permissive open-source licenses. Strategic direction, data governance, repository organisation, and project stewardship currently remain under the stewardship of **Mikel Martínez Mugica**.
 
-## 🌍 Related repositories
-- https://github.com/Habnetic/docs  
-- https://github.com/Habnetic/resilient-housing-bayes  
-- https://habnetic.org  
+Contributions, corrections, and additional datasets are welcome.
 
 ---
 
-## License
-Unless otherwise stated, the contents of this repository are licensed under the MIT License.
+# Data licensing
 
-The Habnetic name and logo are not licensed for reuse or endorsement.
+* Data sources remain subject to their original licenses.
+* Attribution information is preserved whenever required.
+* Derived datasets inherit upstream licensing constraints where applicable.
+* No personal data is intentionally stored within this repository.
 
 ---
 
-© 2026 Habnetic — Open Research for Resilient Futures
+# Related repositories
+
+* https://github.com/Habnetic/docs
+* https://github.com/Habnetic/resilient-housing-bayes
+* https://github.com/Habnetic/habnetic.github.io
+
+---
+
+# Links
+
+🌐 Website: https://habnetic.org
+
+🆔 ORCID: https://orcid.org/0009-0006-5170-4405
+
+📫 Email: [info@habnetic.org](mailto:info@habnetic.org)
+
+---
+
+# License
+
+Unless stated otherwise, the contents of this repository are released under the **MIT License**.
+
+The **Habnetic** name, logo, visual identity, and branding assets are **not** covered by the MIT License and may not be reused without permission.
+
+---
+
+© 2026 Habnetic — Open research for posterior decision stability.
