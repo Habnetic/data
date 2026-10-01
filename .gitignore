@@ -74,17 +74,22 @@ processed/RTM/priors/*_sample.parquet
 
 
 # =========================
-# ERA5 processed products
+# Final processed pluvial hazard inputs
+# Used by RTM / HAM / DON analyses
 # =========================
 
-!processed/*/era5/
-!processed/*/era5/*.parquet
-!processed/*/era5/README.md
-!processed/*/era5/metadata.*
+!processed/*/hazards/
+!processed/*/hazards/pluvial/
+
+!processed/*/hazards/pluvial/H_pluvial_v1_buildings.parquet
+
+# Allow documentation alongside final hazard products
+!processed/*/hazards/pluvial/README.md
+!processed/*/hazards/pluvial/metadata.*
 
 
 # =========================
-# Documentation / metadata
+# City-level documentation / metadata
 # =========================
 
 !processed/*/README.md
