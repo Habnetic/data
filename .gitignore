@@ -102,3 +102,15 @@ processed/RTM/priors/*_sample.parquet
 # =========================
 
 scripts/rtm/hazards/pluvial/deprecated/
+
+# Phase 4 M1 - AHN5 raw terrain data
+/raw/RTM/terrain/ahn/
+
+# Phase 4 M1 - Large derived outputs
+/runs/rtm_m1_citywide/terrain_batches/
+/runs/rtm_m1_citywide/*.parquet
+/runs/rtm_m1_citywide/*.gpkg
+/runs/rtm_m1_terrain_pilot/*.gpkg
+
+# Raster processing auxiliary files
+*.aux.xml
