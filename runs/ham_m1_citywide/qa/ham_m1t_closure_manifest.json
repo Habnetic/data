@@ -1,0 +1,37 @@
+{
+  "city": "HAM",
+  "generated_utc": "2026-11-08T20:02:16.673233+00:00",
+  "input_manifest_sha256": "6992f1e5070702639d149ccaab729da1ce3e3c94611e9a62a2b12b805381f699",
+  "numeric_and_review_counts": {
+    "building_304428_valid_fraction": 0.9933774834437086,
+    "building_8629_p25_m": 8.601399898529053,
+    "candidate_count": 398,
+    "local_min_valid_fraction": 1.0,
+    "measured": 341530,
+    "missing": 0,
+    "neighbourhood_min_valid_fraction": 0.9933774834437086,
+    "regions": {
+      "mainland": 341461,
+      "western_islands": 69
+    },
+    "reviewed_count": 6,
+    "rows": 341530,
+    "unreviewed_count": 392
+  },
+  "numeric_report_sha256": "11bb36212b1ec59d086a8d5a0a34989a5575267aed329650a00bef42e3fa4178",
+  "phase": "M1-T",
+  "project": "Habnetic",
+  "provenance_document_sha256": "70b4a8d5fb702273c7331cfa2a5e441ce52c0f929dc8b145f3488ce93906fcdf",
+  "raw_terrain_source_files_embedded": false,
+  "raw_terrain_source_references": "docs/provenance/HAM_Terrain_Source_Provenance.md",
+  "review_date": "2026-11-08",
+  "reviewed_case_register_sha256": "0cf2c2352f3a58226b8a24180ddc966d443d162083b87485076b5cecada9f4c2",
+  "scientific_scope": "Not a validation of flood risk or decision model improvement",
+  "source_manifest_sha256": "2ef45ecd0a8eac972e5c4192552cbc6ee5ed865c34766b4fd4d26a64ff498414",
+  "source_repo_git_commit_before_closure": "ae41769f6fe8332f6c67d0541c10301f0b061db3",
+  "spatial_inventory_csv_sha256": "4f8320903a11e95b256c2f7c1b14e109b0f885b951c4291516c70c32dcedd58e",
+  "spatial_qa_note_sha256": "f9837ce5d03d4b2dd7979e3f0e225291e6e44221625d934cdbd09c58b125b94f",
+  "spatial_review_limitation": "Six reviewed; 392 other priority candidates not inspected individually",
+  "status": "DERIVED_FEATURES_CLOSED_NUMERIC_PASS_REPRESENTATIVE_SPATIAL_QA_LIMITED",
+  "targeted_diagnostic_sha256": "43a72cb0fc078c5f66d982a5dc96442005e8c698e9e2d63faa5e65ac0e7d02e2"
+}

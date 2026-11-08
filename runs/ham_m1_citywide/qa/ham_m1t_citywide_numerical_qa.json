@@ -1,0 +1,55 @@
+{
+  "T25_m": {
+    "max": 27.053998470306396,
+    "mean": 0.9565313308818412,
+    "median": 0.6168003082275391,
+    "min": -8.508001327514648,
+    "p01": -0.25839996337890625,
+    "p99": 6.600852115154291
+  },
+  "T50_m": {
+    "max": 19.692405700683594,
+    "mean": 0.07339434495924883,
+    "median": 0.042598724365234375,
+    "min": -12.974800109863281,
+    "p01": -1.840600414276123,
+    "p99": 2.394627304077161
+  },
+  "all_numeric_checks_pass": true,
+  "batch_hashes_verified": true,
+  "city": "HAM",
+  "created_utc": "2026-11-08T18:40:43.231077+00:00",
+  "critical_note": "terrain_measured requires 20 valid pixels per ring and 99% geometric extent coverage; it does NOT require 99% valid pixels.",
+  "extraction_manifest_sha256": "6992f1e5070702639d149ccaab729da1ce3e3c94611e9a62a2b12b805381f699",
+  "measured": 341530,
+  "missing": 0,
+  "phase": "M1-T",
+  "region_counts": {
+    "mainland": 341461,
+    "western_islands": 69
+  },
+  "rows": 341530,
+  "selection_note": "Candidate thresholds: |T50| >= 8m, T25 >= 15m, T25 <= -5m, valid-pixel fraction < 0.99 in either ring, plus top/bottom 20 in each feature and 20 lowest coverage in each ring. Flags are review priorities, not error diagnoses.",
+  "spatial_candidates": 398,
+  "status": "NUMERICAL_PASS_SPATIAL_REVIEW_PENDING",
+  "valid_pixel_fraction": {
+    "local": {
+      "below_0_50": 0,
+      "below_0_90": 0,
+      "below_0_99": 0,
+      "median": 1.0,
+      "minimum": 1.0,
+      "p01": 1.0,
+      "p05": 1.0
+    },
+    "neighbourhood": {
+      "below_0_50": 0,
+      "below_0_90": 0,
+      "below_0_99": 0,
+      "median": 1.0,
+      "minimum": 0.9933774834437086,
+      "p01": 1.0,
+      "p05": 1.0
+    }
+  }
+}

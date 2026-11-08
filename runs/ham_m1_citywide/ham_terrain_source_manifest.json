@@ -1,0 +1,92 @@
+{
+  "city": "HAM",
+  "phase": "M1-T",
+  "date_documented": "2026-11-08",
+  "status": "acquired_native_ring_QA_complete; seam_consistency_unresolved; 5m_not_built",
+  "study_population": 341530,
+  "spatial_reference": "EPSG:25832",
+  "source_entries": [
+    {
+      "key": "LGV_HH_2022",
+      "provider": "Freie und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung",
+      "product": "DGM1",
+      "nominal_year": 2022,
+      "path": "raw/HAM/terrain/lgv_dgm1/dgm1_hh_2022-04-30.zip",
+      "sha256": "32b8d624af3000aa8257205b8701d6389b2a08d6c41a8b78850e6c6863be94f2",
+      "archive_bytes": 1364773543,
+      "tif_count": 880,
+      "source_url": "https://daten-hamburg.de/opendata/fernerkundung_hoehenmodelle/dgm/dgm1_hh_2022-04-30.zip",
+      "vertical_reference_reported": "NHN / DE_DHHN2016_NH",
+      "licence": "Datenlizenz Deutschland Namensnennung 2.0",
+      "qa": "ZIP integrity PASS, sampled raster properties PASS; citywide raster-validity pending"
+    },
+    {
+      "key": "WSV_SCHARHOERN_2022",
+      "provider": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes",
+      "product": "DGM-W",
+      "nominal_year": 2022,
+      "path": "raw/HAM/terrain/wsv_dgmw_2022/DGM-W_2022_Unter-_und_Aussenelbe_1x1m_Scharhoern.tif",
+      "sha256": "b6582f0a656276b33ba4b76a8ae040f6491b85b3376a769cb917d67e32915538",
+      "source_index": "https://www.kuestendaten.de/media/zdm/portaltideelbe/Allgemeine_Informationen/Archiv/GIS/DGM-W_Unterelbe_2022_1x1m/Teilgebiete.pdf",
+      "vertical_reference_reported": "DHHN2016",
+      "usage": "Bundesgeodaten usage conditions / GeoNutzV",
+      "qa": "building 1: both native 1m rings 100% valid"
+    },
+    {
+      "key": "LVERMGEO_SH_555_5939_2021",
+      "provider": "LVermGeo Schleswig-Holstein",
+      "product": "DGM1 XYZ",
+      "nominal_year": 2021,
+      "path": "raw/HAM/terrain/lvermgeo_sh/Mehrfachdownload_nY2H30_FnpEbr.zip",
+      "sha256": "907b0a0a9c297cbbce2b69533f0822a7fa9746f96b20c5b745d06cf92a3b8e83",
+      "archive_member": "dgm1_32_555_5939_1_sh_2021.xyz",
+      "derived_path": "processed/HAM/derived/dgm1_sh_1m/dgm1_32_555_5939_1_sh_2021.tif",
+      "portal": "https://geodaten.schleswig-holstein.de/gaialight-sh/_apps/dladownload/dl-dgm1.html",
+      "vertical_reference": "DHHN2016 official state system; source-tile-specific metadata pending",
+      "licence": "CC BY 4.0",
+      "qa": "XYZ 1m grid conversion PASS; native 1m boundary coverage 23/23 collectively PASS"
+    },
+    {
+      "key": "LVERMGEO_SH_556_5939_2021",
+      "provider": "LVermGeo Schleswig-Holstein",
+      "product": "DGM1 XYZ",
+      "nominal_year": 2021,
+      "path": "raw/HAM/terrain/lvermgeo_sh/Mehrfachdownload_3S6dxh_eZFhh0.zip",
+      "sha256": "174cb0c6d6b771d559bbbcff2c9fe6eca82bfd469ce9d92e12a4eb6f232e5298",
+      "archive_member": "dgm1_32_556_5939_1_sh_2021.xyz",
+      "derived_path": "processed/HAM/derived/dgm1_sh_1m/dgm1_32_556_5939_1_sh_2021.tif",
+      "portal": "https://geodaten.schleswig-holstein.de/gaialight-sh/_apps/dladownload/dl-dgm1.html",
+      "vertical_reference": "DHHN2016 official state system; source-tile-specific metadata pending",
+      "licence": "CC BY 4.0",
+      "qa": "XYZ 1m grid conversion PASS; native 1m boundary coverage 23/23 collectively PASS"
+    },
+    {
+      "key": "LGLN_NI_552_5924_2025",
+      "provider": "LGLN Niedersachsen",
+      "product": "DGM1 Cloud Optimized GeoTIFF",
+      "nominal_year": 2025,
+      "stac_item": "dgm1_32_552_5924_1_ni_2025",
+      "catalogue_datetime": "2025-03-06T00:00:00Z",
+      "path": "raw/HAM/terrain/lgln_ni_dgm1/dgm1_32_552_5924_1_ni_2025.tif",
+      "sha256": "695acc10fe4bc04079df8d59629ab04c7e7380bcab6f63360a6f5f9201794a37",
+      "url": "https://dgm1.s3.eu-de.cloud-object-storage.appdomain.cloud/L2502/Vollkacheln/dgm1_32_552_5924_1_ni_2025.tif",
+      "metadata_path": "raw/HAM/terrain/lgln_ni_dgm1/dgm1_32_552_5924_1_ni_2025.xml",
+      "metadata_sha256": "75f124daa6603efedc0b93b4e7693d16e9c094b65b1aeb230492bc4d006c6987",
+      "vertical_reference_reported": "DHHN2016/NHN",
+      "licence": "CC BY 4.0",
+      "qa": "source validity 1000000/1000000; native 1m boundary coverage 3/3 PASS"
+    }
+  ],
+  "boundary_coverage": {
+    "LGV_geometric_screen_only": 341503,
+    "WSV_native_1m_valid": 1,
+    "SH_native_1m_valid": 23,
+    "NI_native_1m_valid": 3,
+    "citywide_5m_valid_count": null
+  },
+  "seam_qa": {
+    "v1_report": "runs/ham_m1_citywide/qa/ham_cross_source_seam_qa.json",
+    "interpretation": "unresolved: two residuals around ±10000 m likely contaminated by invalid values; requires pixel-level diagnostic",
+    "v2_report_pending": "runs/ham_m1_citywide/qa/ham_cross_source_seam_diagnostic_v2.json"
+  }
+}

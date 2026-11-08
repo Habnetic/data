@@ -1,0 +1,7 @@
+bldg_id,T50_m,T25_m,local_valid_fraction,neighbourhood_valid_fraction,qa_class,scope,interpretation,evidence_files,limitations
+8937,19.692406,26.758205,1.0,1.0,PLAUSIBLE_RETAIN,representative_spatial_review,Steep Blankenese hillside and locally elevated terrain,HAM_8937_OSM.png,Pixel-wise original 1m comparison not performed
+7616,-12.974800,11.019700,1.0,1.0,PLAUSIBLE_RETAIN,representative_spatial_review,Blankenese hillside with large neighbourhood elevation spread,HAM_7616_elevation.png;HAM_7616_OSM.png,Spot readings do not independently reproduce ring medians
+8629,-0.864799,26.803401,1.0,1.0,PLAUSIBLE_RETAIN_WITH_SOURCE_ACCURACY_CAVEAT,exact_ring_lower_quartile_diagnostic,Low neighbourhood quartile cells form a coherent downslope southern sector,HAM_8629_lower_quartile.png,Absolute elevation accuracy not independently validated
+41204,-9.064003,-8.508001,1.0,1.0,PLAUSIBLE_RETAIN_CAUSE_UNVERIFIED,representative_spatial_review,Local lower terrain near PETRA III relative to wider neighbourhood,HAM_41204_elevation.png;HAM_41204_OSM.png,Cause of apparent depression not established
+304428,-0.325399,0.267300,1.0,0.993377,COVERAGE_ACCEPTABLE_RETAIN,exact_ring_missingness_diagnostic,Invalid neighbourhood cells localized along east/southeast outer ring,HAM_304428_invalid_pixels.png,No independent ground verification of original footprint
+6904,18.255802,26.713903,1.0,1.0,PLAUSIBLE_RETAIN,representative_spatial_review,Steep Blankenese slope near Schinckels Park,HAM_6904_elevation.png;HAM_6904_OSM.png,Ring medians not rederived from spot readings
