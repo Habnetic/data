@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "city": "DON",
+  "generated_at_utc": "2026-11-08T14:54:24.989047+00:00",
+  "buildings": 7755,
+  "measured": 7755,
+  "unmeasured": 0,
+  "geometric_coverage_threshold": 0.99,
+  "min_valid_pixels": 20,
+  "phase3_asset_sha256": "f34321b00b9301751f894fe83f6b31056786d062057d14c773449d3a962cd5db",
+  "extraction_manifest_sha256": "21afdd2ba54775a033e5eb4253a27d96081199a3030bf9b9d9a65a8c5a714993",
+  "extraction_script_sha256": "00c60c1413d87a82ae885cd5940dd57a401641dd215ca0df6a274ba72d8f8d16",
+  "source_batches": [
+    {
+      "filename": "terrain_000000_000999.parquet",
+      "rows": 1000,
+      "sha256": "10a9ba059220495c98abe066962e0f6cdf9bd9fa779c743895e0c42874399e4b"
+    },
+    {
+      "filename": "terrain_001000_001999.parquet",
+      "rows": 1000,
+      "sha256": "9444036c726d9442936133b532d27e33a599a963118df233cb8acdba21be1b25"
+    },
+    {
+      "filename": "terrain_002000_002999.parquet",
+      "rows": 1000,
+      "sha256": "2beca08641cb438a54c6818f4a5a8734c94349d9ec5b91dbb1295dc3837fa067"
+    },
+    {
+      "filename": "terrain_003000_003999.parquet",
+      "rows": 1000,
+      "sha256": "199e6167f825aab2b15f9115ecbc850f884facc59ef6b1d8c50e8f3496c4376b"
+    },
+    {
+      "filename": "terrain_004000_004999.parquet",
+      "rows": 1000,
+      "sha256": "c1998642e24b41af24488fc77172e2d6b2f4512cc530728b1f51b60302b938de"
+    },
+    {
+      "filename": "terrain_005000_005999.parquet",
+      "rows": 1000,
+      "sha256": "8b09404a6855a3b9796fd7636e62abcc45dab0a0cc455a9f84b81a6c0215a67d"
+    },
+    {
+      "filename": "terrain_006000_006999.parquet",
+      "rows": 1000,
+      "sha256": "7e9a1f0931bdd2652e3a2303aede6d54934809a453958c848ea5f03a352e5976"
+    },
+    {
+      "filename": "terrain_007000_007754.parquet",
+      "rows": 755,
+      "sha256": "781d90920b84a40275eebeebbcd4af812209e179d613498c2880a2765193002a"
+    }
+  ],
+  "T50_m": {
+    "count": 7755,
+    "min": -23.459007263183594,
+    "p01": -11.431300430297851,
+    "median": 0.1685028076171875,
+    "p99": 13.576938705444341,
+    "max": 43.26949977874756
+  },
+  "T25_m": {
+    "count": 7755,
+    "min": -10.267251014709473,
+    "p01": -2.3464601135253904,
+    "median": 4.9990081787109375,
+    "p99": 27.35972885131836,
+    "max": 53.72650146484375
+  },
+  "local_geometric_coverage": {
+    "count": 7755,
+    "min": 0.999999999999998,
+    "p01": 0.999999999999999,
+    "median": 1.0,
+    "p99": 1.0,
+    "max": 1.0
+  },
+  "neighbourhood_geometric_coverage": {
+    "count": 7755,
+    "min": 0.9999999999999977,
+    "p01": 0.999999999999999,
+    "median": 1.0,
+    "p99": 1.0,
+    "max": 1.0
+  },
+  "unmeasured_building_ids": [],
+  "notes": [
+    "Complete geographic extent is distinct from valid elevation pixel coverage.",
+    "99% geometric coverage is an M1-T portability QA rule, not part of frozen Rotterdam M1.",
+    "No missing elevation values were imputed.",
+    "Terrain feature values are methodological outputs, not observed flood damage."
+  ],
+  "output_parquet_sha256": "af797bb043cf05d64c3b2b0994cff030c40bb027c0dc67ea868d1633d02b9ec0"
+}

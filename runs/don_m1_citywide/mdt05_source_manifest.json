@@ -1,0 +1,82 @@
+{
+  "city": "DON",
+  "derivative_attribution": "Obra derivada de MDT05-cob1 2008-2015 CC-BY 4.0 scne.es",
+  "extent_check": {
+    "aoi_fully_within_tile_extents": true,
+    "rectangular_bbox_coverage_fraction": 1.0,
+    "warning": "Bounds-only test: does not establish valid elevation pixels or per-building ring coverage"
+  },
+  "last_checked_utc": "2026-11-08T14:08:06+00:00",
+  "original_attribution": "MDT05-cob1 2008-2015 CC-BY 4.0 scne.es",
+  "product": "PNOA MDT05 - 1st LiDAR coverage",
+  "provider": "IGN / CNIG (Spain)",
+  "records": {
+    "PNOA_MDT05_ETRS89_HU30_0040_LID.tif": {
+      "acquisition_url": "manual browser download from source_catalog",
+      "bytes": 3005080,
+      "filename": "PNOA_MDT05_ETRS89_HU30_0040_LID.tif",
+      "imported_at_utc": "2026-11-08T14:08:06+00:00",
+      "local_relative_path": "raw/DON/terrain/cnig_mdt05/PNOA_MDT05_ETRS89_HU30_0040_LID.tif",
+      "method": "browser_download_scanned",
+      "product_year_visible_in_catalog": "not verified",
+      "raster": {
+        "bands": 1,
+        "bounds_epsg25830": [
+          565627.5,
+          4798097.5,
+          592942.5,
+          4817032.5
+        ],
+        "crs": "EPSG:25830",
+        "dtype": "float32",
+        "height": 3787,
+        "nodata": -32767.0,
+        "resolution_m": [
+          5.0,
+          5.0
+        ],
+        "width": 5463
+      },
+      "sha256": "532bc0c0666b4a60cc898ea7b663c90d5daefd526746537e0fa010ca527cd4c5",
+      "sheet_mtn50": "0040"
+    },
+    "PNOA_MDT05_ETRS89_HU30_0064_LID.tif": {
+      "acquisition_url": "manual browser download from source_catalog",
+      "bytes": 78086945,
+      "filename": "PNOA_MDT05_ETRS89_HU30_0064_LID.tif",
+      "imported_at_utc": "2026-11-08T13:44:23+00:00",
+      "local_relative_path": "raw/DON/terrain/cnig_mdt05/PNOA_MDT05_ETRS89_HU30_0064_LID.tif",
+      "method": "browser_download_scanned",
+      "product_year_visible_in_catalog": "2012",
+      "raster": {
+        "bands": 1,
+        "bounds_epsg25830": [
+          565807.5,
+          4779587.5,
+          593202.5,
+          4798522.5
+        ],
+        "crs": "EPSG:25830",
+        "dtype": "float32",
+        "height": 3787,
+        "nodata": -32767.0,
+        "resolution_m": [
+          5.0,
+          5.0
+        ],
+        "width": 5479
+      },
+      "sha256": "2e9a9c29a626ac61c1e772c81e2886a0b2989dc4592172ac1f226d6843abaf38",
+      "sheet_mtn50": "0064"
+    }
+  },
+  "reference_system": "ETRS89 / UTM 30N (EPSG:25830); orthometric heights",
+  "required_bounds_epsg25830": [
+    574351.982459101,
+    4785931.96049428,
+    589589.417160402,
+    4798637.86387985
+  ],
+  "schema_version": "1.0",
+  "source_catalog": "https://centrodedescargas.cnig.es/CentroDescargas/modelo-digital-terreno-mdt05-primera-cobertura"
+}

@@ -1,7 +1,7 @@
 # Habnetic | M1-T Donostia — Spatial terrain QA
 
-**Review date:** 2026-11-08  
-**Status:** In progress. Numeric QA complete; spatial outlier review not yet complete.  
+**Review date:** 2026-11-08
+**Status:** In progress. Numeric QA complete; spatial outlier review not yet complete.
 **Scope:** Topographic-feature plausibility, not flood-risk or decision-model validation.
 
 ## Dataset and validation context
@@ -47,3 +47,50 @@
 - **Not yet validated:** land/water influence on coastal T50/T25 values; full manual spatial inspection of ten extreme buildings; any empirical flood-risk relationship.
 
 **Next decision gate:** Close Donostia spatial QA only after reviewing remaining outliers and recording the coastal sensitivity disposition (completed analysis or explicitly deferred limitation).
+
+## Representative extreme-value review (2026-11-08)
+
+Three representative buildings were visually inspected in QGIS
+against the CNIG MDT05 terrain mosaic.
+
+### Building 200663: Faro de la Plata
+
+- T50: +36.195 m.
+- Lighthouse situated on elevated coastal terrain.
+- Strong positive relative elevation is geographically plausible.
+- Potential influence of interpolated marine elevations remains unresolved.
+- Measurement retained with coastal sensitivity flag.
+
+### Building 193156: Bateria del Mirador
+
+- T50: +43.270 m.
+- Historical coastal fortification occupying elevated terrain.
+- Strong positive relative elevation is geographically plausible.
+- Potential coastal interpolation effects remain unquantified.
+- Measurement retained for future coastal sensitivity assessment.
+
+### Building 198335: Mount Ulia
+
+- T50: -23.459 m.
+- Building situated in a small topographic depression.
+- Negative relative elevation is consistent with the observed terrain.
+- No obvious spatial inconsistency identified.
+- Measurement retained.
+
+### Review conclusion
+
+The three representative extreme T50 measurements are
+geographically plausible.
+
+The Donostia dataset contains 7,755 buildings with accepted
+terrain measurements and complete geometric coverage.
+
+This review provides preliminary spatial plausibility evidence.
+It does not establish empirical flood-risk validity or exclude
+all terrain-data artefacts.
+
+Seven other buildings in the ten-extreme sample were not
+individually reviewed.
+
+Status: Initial Donostia spatial QA complete.
+Coastal sensitivity remains an open methodological question.

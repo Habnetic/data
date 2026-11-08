@@ -1,0 +1,94 @@
+{
+  "timestamp_utc": "2026-11-08T14:25:00.884616+00:00",
+  "study_area": "DON",
+  "crs": "EPSG:25830",
+  "resolution_m": 5.0,
+  "source_catalogue": "https://centrodedescargas.cnig.es/CentroDescargas/modelo-digital-terreno-mdt05-primera-cobertura",
+  "attribution": "Obra derivada de MDT05-cob1 2008-2015 CC-BY 4.0 scne.es",
+  "sources": [
+    {
+      "path": "raw\\DON\\terrain\\cnig_mdt05\\PNOA_MDT05_ETRS89_HU30_0064_LID.tif",
+      "size_bytes": 78086945,
+      "sha256": "2e9a9c29a626ac61c1e772c81e2886a0b2989dc4592172ac1f226d6843abaf38"
+    },
+    {
+      "path": "raw\\DON\\terrain\\cnig_mdt05\\PNOA_MDT05_ETRS89_HU30_0040_LID.tif",
+      "size_bytes": 3005080,
+      "sha256": "532bc0c0666b4a60cc898ea7b663c90d5daefd526746537e0fa010ca527cd4c5"
+    }
+  ],
+  "seam_qa": {
+    "overlap_bounds": [
+      565807.5,
+      4798097.5,
+      592942.5,
+      4798522.5
+    ],
+    "overlap_valid_comparisons": 370175,
+    "absolute_difference_median_m": 0.0,
+    "absolute_difference_p95_m": 0.0,
+    "absolute_difference_max_m": 0.0,
+    "fraction_over_0p5m": 0.0,
+    "fraction_over_1m": 0.0
+  },
+  "output": {
+    "path": "processed\\DON\\derived\\mdt05_don_5m_mosaic.tif",
+    "size_bytes": 18062330,
+    "sha256": "36f3def4e107da827ba49ffed76b8a06f751c16666f18e0031271c3fb827a569",
+    "bounds": [
+      574347.5,
+      4785927.5,
+      589592.5,
+      4798642.5
+    ],
+    "width": 3049,
+    "height": 2543,
+    "nodata": -32767.0,
+    "valid_pixel_fraction_in_bounding_rectangle": 0.9927290614548816,
+    "targeted_building_qa": [
+      {
+        "bldg_id": "198406",
+        "ring": "local",
+        "valid_pixels": 82,
+        "pixels_in_ring": 82,
+        "valid_fraction": 1.0
+      },
+      {
+        "bldg_id": "198406",
+        "ring": "neighbourhood",
+        "valid_pixels": 1331,
+        "pixels_in_ring": 1331,
+        "valid_fraction": 1.0
+      },
+      {
+        "bldg_id": "196441",
+        "ring": "local",
+        "valid_pixels": 125,
+        "pixels_in_ring": 125,
+        "valid_fraction": 1.0
+      },
+      {
+        "bldg_id": "196441",
+        "ring": "neighbourhood",
+        "valid_pixels": 1491,
+        "pixels_in_ring": 1491,
+        "valid_fraction": 1.0
+      },
+      {
+        "bldg_id": "200663",
+        "ring": "local",
+        "valid_pixels": 94,
+        "pixels_in_ring": 94,
+        "valid_fraction": 1.0
+      },
+      {
+        "bldg_id": "200663",
+        "ring": "neighbourhood",
+        "valid_pixels": 1378,
+        "pixels_in_ring": 1378,
+        "valid_fraction": 1.0
+      }
+    ]
+  },
+  "scientific_scope": "terrain preprocessing only; building-wide pixel QA still pending"
+}
