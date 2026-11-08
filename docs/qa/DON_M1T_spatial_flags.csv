@@ -1,0 +1,2 @@
+bldg_id,qa_category,qa_status,observation_date,t50_m,t25_m,interpretation,action
+200663,COASTAL_TERRAIN,COASTAL_SENSITIVITY_PENDING,2026-11-08,36.195,53.7265,"Lighthouse on elevated coastal terrain; water/interpolation influence not yet excluded","Retain values; evaluate 20-100 m ring against land/water mask; sensitivity analysis if necessary"
