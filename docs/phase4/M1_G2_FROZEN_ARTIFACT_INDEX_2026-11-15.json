@@ -1,0 +1,508 @@
+{
+    "record_id":  "M1-G2-FROZEN-ARTIFACTS-2026-11-15",
+    "evidence":  "synthetic",
+    "note":  "Git tags DO NOT contain these ignored binary assets. Preserve the data and scientific outputs independently.",
+    "scientific_config_sha256":  "068b3a5d12b5e2bd410ce6a092cfba520901e2892bedbfa2c71e6b9eeff405c4",
+    "science_tag":  "phase4-m1g2-scientific-audit-2026-11-15",
+    "data_tag":  "phase4-m1g2-data-gis-closure-2026-11-15",
+    "items":  [
+                  {
+                      "repository":  "data",
+                      "relative_path":  "runs/ham_m1_citywide/qa/ham_dgm5_citywide_manifest.json",
+                      "size_bytes":  660413,
+                      "sha256":  "f9175598ca41f49f98b28dfa584969fde4028702147b5c40fe0f2c4fa33fa7be"
+                  },
+                  {
+                      "repository":  "data",
+                      "relative_path":  "runs/rtm_m1_citywide/terrain_features_m1_5m.parquet",
+                      "size_bytes":  11514691,
+                      "sha256":  "242045b495f547ddaa56f9e130415841831ca85f89de584ff44b3038d0c34711"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B0/citywide_decisions.parquet",
+                      "size_bytes":  327654,
+                      "sha256":  "a8ef7b09a6882c7c4a0433fbba0d0a9401e8ae2f5aa8c1e3e4d5bc42ff7a90ee"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B0/fit_diagnostics.json",
+                      "size_bytes":  729,
+                      "sha256":  "39f1dc8d7b1a78fb2513e0492a58f4ccd741e9befdd66d24d58e06fc31c00424"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B0/idata.nc",
+                      "size_bytes":  414580,
+                      "sha256":  "0f2206862628b5a4bbd6e2907ec88c2451f97f4d161929091281b46c72ffa7e9"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B0/posterior_summary.csv",
+                      "size_bytes":  258,
+                      "sha256":  "08f0f72e566e9df68dcd00625f52c27fcc347522b81b1e342d43aa51b88cb00c"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B0/scoring_manifest.json",
+                      "size_bytes":  948,
+                      "sha256":  "eeb217ac9abba0c44db7ca6bf1454c82bab8e05c3e59e6670d589f66da6dc4f7"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B1/citywide_decisions.parquet",
+                      "size_bytes":  327972,
+                      "sha256":  "27d5be0dad47141ef8e8a0f6ed9c802b52f9a136ce8126abd53d4fc39de8576c"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B1/fit_diagnostics.json",
+                      "size_bytes":  730,
+                      "sha256":  "3a69acb47e85e86a81ca3949b58dc61d0d619149db5ae0b6697889dadc3dbce2"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B1/idata.nc",
+                      "size_bytes":  448381,
+                      "sha256":  "9bdf458de8c142728cad293950b96d26d4693d6398479763b36e75882401997b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B1/posterior_summary.csv",
+                      "size_bytes":  319,
+                      "sha256":  "16f53f90a08a4aff8bf66c24abe6373ab733b93455de61615f732ddaad093800"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/B1/scoring_manifest.json",
+                      "size_bytes":  961,
+                      "sha256":  "306675c6d2cb31850d16e9d8d3ea4b97f2cc40f1348aafc40e60e9a58543d792"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/citywide_comparison.parquet",
+                      "size_bytes":  406634,
+                      "sha256":  "cee188ac8c91a7b322869fa24a18d117a4b7db6dfeb4e186e24ae45c9e0a6100"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0/comparison_manifest.json",
+                      "size_bytes":  822,
+                      "sha256":  "004bd76b18c6ee7a3d10b0a2036f4b279e5ba84aa0c7a3b73a8b63fcf8f0b798"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_0_scenario.parquet",
+                      "size_bytes":  365355,
+                      "sha256":  "6d53bdb28c445843954d767bc50ff22d08a6d685efc03eebea6bf8478ecacfd8"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B0/citywide_decisions.parquet",
+                      "size_bytes":  327786,
+                      "sha256":  "dd71b933b9b1b99cffa5db98064f5f1d7deccbc0e0692bcb389ba29034f331d0"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B0/fit_diagnostics.json",
+                      "size_bytes":  730,
+                      "sha256":  "8d336beef4fa54c38a320af83deec3bcd6c002c7e8d70ed820ec47ac70b77e23"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B0/idata.nc",
+                      "size_bytes":  414638,
+                      "sha256":  "bac5b22876e86f208612272208022b00407d50dd83fd2379deafc4550e7f426f"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B0/posterior_summary.csv",
+                      "size_bytes":  260,
+                      "sha256":  "d7789dcaad5fff03df822ba44e9e6950b57572c9ee6c0af9d425324b51e8ac03"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B0/scoring_manifest.json",
+                      "size_bytes":  963,
+                      "sha256":  "697cdcb02630c53414fedba75b08e213b908e2bfa80f7fd8392b58f00b3be2dc"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B1/citywide_decisions.parquet",
+                      "size_bytes":  327698,
+                      "sha256":  "b6b81ab3dac7fe8aa22afdba0dbff1cfaec7752e30e50123746c071474884904"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B1/fit_diagnostics.json",
+                      "size_bytes":  730,
+                      "sha256":  "4e27a75004e8cfa074aa9575e8f3720ca4cf019018827eeddf04113395779b61"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B1/idata.nc",
+                      "size_bytes":  447403,
+                      "sha256":  "48165b64f98e0da57f35be9ac42f03663dcb0ff409a91d01f9a9faca004e0b61"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B1/posterior_summary.csv",
+                      "size_bytes":  321,
+                      "sha256":  "9346a3ee69f144bda5d935a30093205ac870b6f047500bdeca7096895b64c439"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/B1/scoring_manifest.json",
+                      "size_bytes":  963,
+                      "sha256":  "08b82694982ece18a84c02bed05a349af501929731f3fefa166bcbd6f7c0ba5b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/citywide_comparison.parquet",
+                      "size_bytes":  407085,
+                      "sha256":  "ea4b83cf8f8a89eeab79ce7f139f1ea912f1c380147537e452ccb2805f6365ad"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8/comparison_manifest.json",
+                      "size_bytes":  870,
+                      "sha256":  "535316d8233095603e655370ed4de9322d1ea730c6d6dfb01ac726523aa8b950"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/gamma_neg0p8_scenario.parquet",
+                      "size_bytes":  365353,
+                      "sha256":  "daac26ec78299580c53324eae659d57a0fe5bad36213b4b0f20d85d906a2aae1"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/DON/m1g_citywide_v0.1/preparation_manifest.json",
+                      "size_bytes":  2926,
+                      "sha256":  "7ccdcf0af044e738a27233dacbbe1637d71114f82a6010d6f63df4240d5a7c93"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B0/citywide_decisions.parquet",
+                      "size_bytes":  11812568,
+                      "sha256":  "c2b3dc02641a95df073e18af611598127fd1a59dd5046deb03f951c5fef4668b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B0/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "7d958b616dc77de7c721a2750976ce2f7c5f24c1a79241e5dbd524e839324a8f"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B0/idata.nc",
+                      "size_bytes":  990622,
+                      "sha256":  "c8d6b191108664ababb6a5f9cdfcdcba53219161fc27370ecb0c6b2087147a9a"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B0/posterior_summary.csv",
+                      "size_bytes":  255,
+                      "sha256":  "718114e82b6e86b58ecdccfb1939442bbbc6391ef7ca96fb21107434ba924880"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B0/scoring_manifest.json",
+                      "size_bytes":  966,
+                      "sha256":  "783a8af81ab933f98d290630f5f127afd7577bec653c668dc612a0ee1d435aa2"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B1/citywide_decisions.parquet",
+                      "size_bytes":  11814367,
+                      "sha256":  "c32b359f1c07261bf4028b5c7a41d4072233da5e5bc7010586ad09be60b78d93"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B1/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "a3e844758c2dbe9696708d73765a73a43fd8888429247b8771caa674956fa31b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B1/idata.nc",
+                      "size_bytes":  1023026,
+                      "sha256":  "c7e59cc55f2246f0e482e410a36a18f80b9bafcb1fe57e6d0ad46459421f5cf6"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B1/posterior_summary.csv",
+                      "size_bytes":  312,
+                      "sha256":  "33419942e8c85bc9e22780ef7bd177d4630f38a63bfa388b9eea8e4a1f359958"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/B1/scoring_manifest.json",
+                      "size_bytes":  966,
+                      "sha256":  "ddd7e07bc743ec2afc8d54c35f0cd1d252c1fa9762bea91e2f0fd01b20ec2cc3"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/citywide_comparison.parquet",
+                      "size_bytes":  14848183,
+                      "sha256":  "769660b180df8f60781d6aa4242da07bbce379b671771f1028699301e9f8ea1d"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0/comparison_manifest.json",
+                      "size_bytes":  883,
+                      "sha256":  "80d919871d9fc974aad340cb10e03136736eda4112bd3dd56bb8f703e658cd05"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_0_scenario.parquet",
+                      "size_bytes":  11438739,
+                      "sha256":  "9239917a0717640ffff36122e2c65b1247a478b9c9cf269c0fe4b8ac5c93a1e0"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B0/citywide_decisions.parquet",
+                      "size_bytes":  11813600,
+                      "sha256":  "01c8b15e808da205890e5de7b83a40857f8a462bb40cdbb7119011ef8a217e1c"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B0/fit_diagnostics.json",
+                      "size_bytes":  733,
+                      "sha256":  "5a9735001b02468967d820b6415d842f9a255700f0a2041b8b1d85a3d68d3a97"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B0/idata.nc",
+                      "size_bytes":  988217,
+                      "sha256":  "2776fe4d8e4ea1a5d8f755638bf58ba8df7777a973cee4062b26babd5fc15adc"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B0/posterior_summary.csv",
+                      "size_bytes":  252,
+                      "sha256":  "98f9cac3beb57ea7e607be71dfdebd98866d2b5e66686d052f4f1ea34accad00"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B0/scoring_manifest.json",
+                      "size_bytes":  965,
+                      "sha256":  "6c2f5e53156c150fcb28e83ab5b0b90a6361280dc4be81c0397965110b973a04"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B1/citywide_decisions.parquet",
+                      "size_bytes":  11818515,
+                      "sha256":  "120c45b18ec2e58ebe78bf9440d5230a8847002b931d4d12e40197ce3b31dbff"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B1/fit_diagnostics.json",
+                      "size_bytes":  733,
+                      "sha256":  "b049870c6e4d48dd2bd6851633829880eaa7ab585a56965414ea54353cde2dd2"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B1/idata.nc",
+                      "size_bytes":  1020860,
+                      "sha256":  "f05c4529ccb87add684cb7d4160b43f504278683745dd06b8ba59e17416f5aa0"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B1/posterior_summary.csv",
+                      "size_bytes":  319,
+                      "sha256":  "2427982eb53b7fa95031c0a0b4a92a125f283612033145efab3ccf4d9a098006"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/B1/scoring_manifest.json",
+                      "size_bytes":  963,
+                      "sha256":  "c834d247fde91a3b7226537273acdeee0855914ea8d5b01ef708afea681ea484"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/citywide_comparison.parquet",
+                      "size_bytes":  14869237,
+                      "sha256":  "6e7b2fb2e369d75203b4a9ba7a0f5ef52ac50e994902814f0a56037dc4498047"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8/comparison_manifest.json",
+                      "size_bytes":  883,
+                      "sha256":  "e969102e6f3914d50e8de59c6593884a903d7a8319049830f4141d94f7e72e2b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/gamma_neg0p8_scenario.parquet",
+                      "size_bytes":  11439539,
+                      "sha256":  "d54624d2d99a6b1576651df7eaa1e1e9ad9fbc6af2f06593e07fa45360342d2e"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/HAM/m1g_citywide_v0.1/preparation_manifest.json",
+                      "size_bytes":  2950,
+                      "sha256":  "707d794a0764a27fd0e63585689c62ca9f11af06319274480c875dbec24b7017"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B0/citywide_decisions.parquet",
+                      "size_bytes":  8765405,
+                      "sha256":  "8e69ab6205cc28e7b3368548bd2c720d4b305ff93d98f0cad8ee5dff363d6c2e"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B0/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "5424b3af62a0e7cd4f65696427a5ee65eb191d8ade09871cb7ebe76a91542eb1"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B0/idata.nc",
+                      "size_bytes":  746780,
+                      "sha256":  "119454ada6746a13875bed537b530f09c3d163441f1b04ce931945d7f0ba1b7a"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B0/posterior_summary.csv",
+                      "size_bytes":  245,
+                      "sha256":  "c080bc1534aeca11ba40ef74536fae8509b65bebae1119279321f490d9ec1427"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B0/scoring_manifest.json",
+                      "size_bytes":  968,
+                      "sha256":  "48cf1f539cbef1e40154e8cf8c74b086db91402a866a5709e77bfe745aeaf725"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B1/citywide_decisions.parquet",
+                      "size_bytes":  8766468,
+                      "sha256":  "760f00610838d08204293f499e43bcbf0f861fa97ad00613372057ad153005b6"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B1/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "febecb740f965a963aeb1222d2e611956925fd0296b70bc490c1db642cd81e48"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B1/idata.nc",
+                      "size_bytes":  781597,
+                      "sha256":  "f29bf62ff8c1ba344f31d80e8298753e8a43204084bbb84122eb42107e48aa85"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B1/posterior_summary.csv",
+                      "size_bytes":  307,
+                      "sha256":  "7baee9163b3adf870c2cc58078adca61739e78b3f687bfbd8bd73bca156bcaca"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/B1/scoring_manifest.json",
+                      "size_bytes":  967,
+                      "sha256":  "1589650f02656b492ce5bf759ffe55358f8805c2aa2c5f4e04b411fe60e646fb"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/citywide_comparison.parquet",
+                      "size_bytes":  10821818,
+                      "sha256":  "d2f3907d8ffc56306ff57e0b8c31fe6762662dcb711e1a30467fbcda8eb88e5b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0/comparison_manifest.json",
+                      "size_bytes":  883,
+                      "sha256":  "bdaa6aaa47097d33da95e6a1241d06e8defa2bde9dd665028f954d6a78e75546"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_0_scenario.parquet",
+                      "size_bytes":  9741069,
+                      "sha256":  "f6ecea686f5a0ebf2683a330d530924b2c35677829567499c0c2b4e12a74e952"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B0/citywide_decisions.parquet",
+                      "size_bytes":  8765733,
+                      "sha256":  "b5925233c6e9f51a8a04f7e66521e7324ca3352f26ad20200bbffaa8abe255cc"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B0/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "1d7ddc6e2a0c11987e94ddaacf762d1945cb27fa44b5b196bf70ec181ac26416"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B0/idata.nc",
+                      "size_bytes":  747184,
+                      "sha256":  "9dcbfa3a48ddef27b0e89e466cc0bb8153e69dbd4ad56fa87ff6a51fe22a9454"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B0/posterior_summary.csv",
+                      "size_bytes":  250,
+                      "sha256":  "07b121be1afc560564799ac52da1eda9eb4147a13f5308c81769f01aa9d600af"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B0/scoring_manifest.json",
+                      "size_bytes":  967,
+                      "sha256":  "9ee58a141a354813f831617bfde9082e90a9bd01c32b7993a5b0b5d6ff302f70"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B1/citywide_decisions.parquet",
+                      "size_bytes":  8767469,
+                      "sha256":  "907acef83d0cc99b95d1d4cbec697b170a1399bd8af374370fe822437812a72e"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B1/fit_diagnostics.json",
+                      "size_bytes":  732,
+                      "sha256":  "690c908cda3f9a203c22796f12a47892e98a2cc06dbb007076f788c4084a2f8c"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B1/idata.nc",
+                      "size_bytes":  779790,
+                      "sha256":  "4ea7be07e07fbb835fa6e86c660a99486f7b49f69e8fe16f272a3f764e96834f"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B1/posterior_summary.csv",
+                      "size_bytes":  311,
+                      "sha256":  "9d9c6c092bd8ef304a13413f94d6af8e24c67901cf3c922c9e98342362516c21"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/B1/scoring_manifest.json",
+                      "size_bytes":  967,
+                      "sha256":  "240e9489a622eca684ca8314d565adfe1bd8b3913663d35105e6689b0fc51b91"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/citywide_comparison.parquet",
+                      "size_bytes":  10828783,
+                      "sha256":  "2d592b1dccf79a6a4b18fcfd6cb7d32343572fe135eaddfc68771e82f74ee36c"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8/comparison_manifest.json",
+                      "size_bytes":  882,
+                      "sha256":  "20bbe543cb0aebb91a2f6bc40b60791ee340bde7b0d2853a3e134647d1a4522b"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/gamma_neg0p8_scenario.parquet",
+                      "size_bytes":  9740546,
+                      "sha256":  "c83ce04ffe53683d8b12d9909b1a735c212d1b6966145eb2722b47d77ccfb7e2"
+                  },
+                  {
+                      "repository":  "resilient-housing-bayes",
+                      "relative_path":  "outputs/phase4/RTM/m1g_citywide_v0.1/preparation_manifest.json",
+                      "size_bytes":  2931,
+                      "sha256":  "cb37571b1d685c6c615856e6e2f3a1a44dab6f0d7c3c9bc2367fb3a58c82e170"
+                  }
+              ]
+}
