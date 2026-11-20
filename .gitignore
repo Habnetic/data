@@ -114,3 +114,40 @@ scripts/rtm/hazards/pluvial/deprecated/
 
 # Raster processing auxiliary files
 *.aux.xml
+
+# =========================
+# Local secrets and credentials
+# =========================
+
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# =========================
+# Additional raw data formats
+# =========================
+
+/raw/**/*.parquet
+/raw/**/*.feather
+/raw/**/*.arrow
+/raw/**/*.grib
+/raw/**/*.grib2
+/raw/**/*.sqlite
+/raw/**/*.mbtiles
+/raw/**/*.pmtiles
+
+# =========================
+# Local audit and temporary outputs
+# =========================
+
+.local-cache/
+# Third-party source datasets retained locally
+/raw/HAM/boundaries/alkis_verwaltungsgrenzen_hamburg.GML
+
+# Legacy OSM-derived building attributes
+/processed/RTM/priors/building_water_proximity.parquet

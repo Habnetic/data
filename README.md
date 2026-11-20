@@ -10,7 +10,7 @@ Habnetic is an open research project exploring probabilistic decision-making und
 
 This repository contains the data layer used across the Habnetic research ecosystem.
 
-It stores selected source data, canonical processed datasets, metadata, provenance records, and scripts used to construct research-ready spatial inputs.
+It stores selected **reviewed, versioned research inputs**, metadata, provenance records, and scripts used to construct research-ready spatial inputs. Most original third-party geodata and large generated outputs are retained locally, **not distributed through this repository**.
 
 The repository is intentionally separate from statistical inference and publication source files:
 
@@ -32,7 +32,7 @@ Study areas:
 - **HAM** — Hamburg
 - **DON** — Donostia / San Sebastián
 
-The repository includes data supporting:
+The repository documents sources and processing workflows supporting:
 
 - administrative boundaries;
 - building footprints;
@@ -57,8 +57,8 @@ Mikel Martinez Mugica
 Independent Researcher, Habnetic  
 2026
 
-**DOI:**  
-https://doi.org/10.5281/zenodo.23110714
+**DOI (October 2026, manuscript v1.1):**
+https://doi.org/10.5281/zenodo.23599344
 
 **ORCID:**  
 https://orcid.org/0009-0006-5170-4405
@@ -116,17 +116,28 @@ Historical planning and working notes may also remain in the repository when the
 
 Source material and source documentation.
 
-Large downloads and formats that are impractical or inappropriate to version are excluded through `.gitignore`. Where raw data are not stored directly, `SOURCE.md` files record their origin and acquisition context.
+Original third-party downloads are kept locally by default. Where source bytes are not distributed, `SOURCE.md` and acquisition manifests record provider, product, version, date, location, and licence evidence when known. The original upstream licensing conditions still apply.
 
-Original upstream licensing conditions still apply.
+For example, `raw/HAM/boundaries/alkis_verwaltungsgrenzen_hamburg.GML` is retained **locally** and excluded from the current Git index; its source record remains public in `raw/HAM/boundaries/SOURCE.md`. Removing a file from the current Git index does not erase earlier commits.
 
 ### `processed/`
 
 Canonical research-ready datasets used by Habnetic analyses.
 
-Only selected processed products needed for reproducibility are versioned. Generated intermediates are ignored by default.
+Only selected processed products are versioned, subject to source and redistribution review. Generated intermediates are ignored by default.
 
-Current versioned products include building-level pluvial-hazard inputs for RTM, HAM, and DON, together with selected Rotterdam prior / exposure products.
+**Selected files currently kept in Git:**
+
+- `processed/DON/hazards/pluvial/H_pluvial_v1_buildings.parquet` (7,755 building-level hazard-proxy values);
+- `processed/HAM/hazards/pluvial/H_pluvial_v1_buildings.parquet` (341,530 values);
+- `processed/RTM/hazards/pluvial/H_pluvial_v1_buildings.parquet` (221,324 values);
+- `processed/RTM/priors/building_water_proximity_v3.parquet` (221,324 IDs and derived hydrographic-distance fields).
+
+The three `H_pluvial_v1_buildings.parquet` files contain building IDs, a numerical precipitation-derived hazard proxy, and provenance labels; they contain **no explicit geometry or coordinate columns**. Their precise original ERA5 dataset and historical use terms remain subject to lineage review.
+
+**Local-only legacy file:** `processed/RTM/priors/building_water_proximity.parquet` combines OSM building attributes (including building tags, name and postal code) with derived exposure indicators. It is **excluded from current Git distribution**; the older [`priors/README.md`](processed/RTM/priors/README.md) has been updated to reflect its actual schema.
+
+A reduced schema does not by itself settle database rights. The underlying building and hydrography sources and each public artefact must still be assessed before reuse or distribution.
 
 ### `metadata/`
 
@@ -154,7 +165,7 @@ Statistical inference does **not** belong here. It is maintained in `resilient-h
 
 ### `runs/`
 
-Selected QA and validation artefacts retained when useful for documenting a data-processing step.
+Selected QA manifests and validation artefacts retained when useful for documenting a data-processing step. Bulk terrain batches, intermediate mosaics, and local diagnostics are not intended for automatic publication.
 
 ---
 
@@ -177,7 +188,15 @@ As a general rule:
 - disposable intermediates are ignored;
 - statistical posterior outputs belong in the research-code workflow rather than this repository.
 
-The `.gitignore` file defines the current repository-level storage policy.
+The `.gitignore` file defines the default storage policy **for untracked files**. It does not undo files already committed or remove blobs from historical Git commits.
+
+### Publication boundary
+
+- **Public by design:** Habnetic-authored code, processing methods, source references, licence notices, selected research inputs, and reviewed QA records.
+- **Local by default:** raw geospatial datasets, complete building/terrain databases, bulk intermediate files, and legacy OSM attribute extracts.
+- **Release only after review:** any building-level join, geospatial tile, download bundle, or derivative database that may contain or expose substantial third-party content.
+
+A private Git repository does **not** automatically make files private when they are served by a website. In particular, files under a web application's public/static directory can be downloaded by visitors if that application is deployed. Access control and asset-level rights review are separate release requirements.
 
 ---
 
@@ -194,7 +213,7 @@ raw/<CITY>/**/SOURCE.md
 
 Dataset-specific processing decisions should remain reproducible from the scripts and accompanying documentation.
 
-When source data cannot be redistributed, Habnetic should preserve enough metadata to reacquire and reconstruct the derived dataset where licensing and availability permit.
+When source data are kept local or cannot be redistributed, Habnetic should preserve enough metadata to reacquire and reconstruct derived inputs where the source terms and continued availability permit. A provider-wide licence statement is not sufficient evidence for an unidentified historical download.
 
 ---
 
@@ -221,19 +240,19 @@ The data workflow follows several principles:
 - versioned canonical research inputs;
 - clear separation between source, processed, and generated data;
 - preservation of upstream licensing and attribution requirements;
-- no intentional storage of personal data.
+- no intentional public redistribution of address/name attributes or other identifying building metadata without explicit review.
 
 ---
 
 ## Next Research Direction
 
-Phase 4 will extend the data layer incrementally while preserving the Phase 3 baseline.
+Phase 4 extends the data layer while preserving the Phase 3 baseline. The M1 topography work has been completed and audited separately from the historical Phase 3 paper. Later milestones remain research directions rather than guaranteed releases.
 
 The working progression is:
 
 ```text
 M0 — Phase 3 baseline
-M1 — + topography
+M1 — + topography (completed)
 M2 — + more realistic hazard representation
 M3 — + improved vulnerability / exposure
 M4 — + observed outcomes
@@ -249,7 +268,7 @@ New data layers should be added only with explicit provenance, units, CRS, proce
 - Research code: https://github.com/Habnetic/resilient-housing-bayes
 - Habnetic organisation: https://github.com/Habnetic
 - Website: https://habnetic.org
-- Phase 3 publication: https://doi.org/10.5281/zenodo.23110714
+- Phase 3 publication: https://doi.org/10.5281/zenodo.23599344
 - ORCID: https://orcid.org/0009-0006-5170-4405
 
 ---
@@ -264,13 +283,18 @@ Contributions, corrections, provenance improvements, and additional open dataset
 
 ## Data Licensing
 
-Source datasets remain subject to their original licences and attribution requirements.
+**The repository's MIT licence applies to original Habnetic-authored code and documentation only, unless stated otherwise.** It does not relicense third-party geographic data, downloaded files, or derived datasets that remain subject to upstream rights and conditions.
 
-Derived datasets may inherit upstream licensing constraints. Inclusion in this repository does not replace or override the licence of the original data provider.
+Known or documented source families include:
 
-Unless otherwise stated, Habnetic-authored code and documentation in this repository are released under the repository licence.
+- **Rotterdam buildings:** OpenStreetMap, via Geofabrik Zuid-Holland, subject to the **Open Database License (ODbL) 1.0**. See [`raw/RTM/buildings/osm/SOURCE.md`](raw/RTM/buildings/osm/SOURCE.md). Attribution, derived-database classification, and any applicable availability obligations must be assessed **per exported product**.
+- **Hamburg administrative boundary:** LGV Hamburg, **Datenlizenz Deutschland Namensnennung 2.0 (DL-DE BY 2.0)**, as recorded in [`raw/HAM/boundaries/SOURCE.md`](raw/HAM/boundaries/SOURCE.md). The source GML is local-only in the current Git tree; source and transformation credit must be retained where used.
+- **Pluvial hazard proxy:** a climate-data derivation described in the Phase 3 research. The exact historical ERA5 product, version, citation, and applicable licence still require verification before an unconditional redistribution claim.
+- **RTM exposure indicators:** derived from building and hydrography inputs. The exact historical hydrography product/version and export-level obligations remain under review.
 
-The Habnetic name, logo, visual identity, and branding assets are not covered by that licence and may not be reused for endorsement without permission.
+**Rights status is evidence-based, not automatic clearance.** A `SOURCE.md` record is an important provenance clue, but should be tied to the exact acquired file, its terms, its transformations, and the proposed public output.
+
+The Habnetic name, logo, visual identity, and branding assets are not covered by the MIT licence and may not be reused for endorsement without permission.
 
 ---
 
